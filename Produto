@@ -1,0 +1,63 @@
+public class Produto{
+    private int codigo;
+    private String descricao;
+    private int quantidadeArmazenada;
+    private static int quantidadeProdutos=0;
+    private int limiteEstoque;
+
+    public Produto(int codigo, String descricao,
+                   int quantidadeArmazenada){
+        quantidadeProdutos++;
+        this.codigo=codigo;
+        this.descricao=descricao;
+        this.quantidadeArmazenada=quantidadeArmazenada;
+        limiteEstoque=10;
+    }
+    public Produto(){
+        quantidadeProdutos++;
+        limiteEstoque=10;
+    }
+
+    public void imprimeTotalProdutos(){
+        System.out.println("Total de Produtos"+
+                quantidadeProdutos);
+    }
+
+    public void retira(int quant){
+        if (quantidadeArmazenada-quant >= limiteEstoque)
+            quantidadeArmazenada -= quant;
+        else
+            System.out.println("Não há quantidade em estoque");
+    }
+
+    public void StatusEstoque(){
+        if (quantidadeArmazenada == 0)
+            System.out.println("Estoque Nulo");
+        else
+        if (quantidadeArmazenada > limiteEstoque)
+            System.out.println("Estoque Regular");
+        else
+            System.out.println("Estoque Restrito");
+    }
+
+    public void AlteraLimite(int novo){
+        if (novo > 0){
+            limiteEstoque = novo;
+        }
+    }
+
+    public void adiciona(int quant){
+        quantidadeArmazenada += quant;
+    }
+
+    public void imprimeProduto(){
+        System.out.println("Descrição "+descricao);
+        System.out.println("Código "+codigo);
+        System.out.println("Quantidade "+
+                quantidadeArmazenada);
+    }
+
+}
+
+
+//metodo de acesso daquele atributo, tem que saber o que é o metodo de acesso, SER CERTEIRO.
