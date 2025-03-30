@@ -1,0 +1,10 @@
+public class Main{
+    public static void main(String args[]){
+        Produto p1 = new Produto(1232, "Celular Samsung S8", 30);
+        p1.imprimeTotalProdutos();
+        p1.StatusEstoque();
+        //continuar de acordo com a lista de exercício
+        //unidade 5
+    }
+}
+
